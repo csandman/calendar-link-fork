@@ -4,6 +4,7 @@ interface CalendarEvent {
   title: string;
   start: any;
   end?: any;
+  timeZone?: string;
   duration?: [number, dayjs.UnitType];
   allDay?: boolean;
   rRule?: string;
@@ -38,6 +39,7 @@ interface Google extends Record<string, string | boolean | number | undefined> {
   add?: string;
   src?: string;
   recur?: string;
+  ctz?: string;
 }
 
 interface Outlook extends Record<string, string | boolean | number | undefined> {

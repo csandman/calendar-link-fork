@@ -60,6 +60,7 @@ for (const service of [
         title: "Birthday party",
         start: "2019-12-29T12:00:00.000+01:00",
         duration: [2, "hour"],
+        timeZone: "America/New_York",
       };
       const link = service(event);
       expect(link).toMatchSnapshot();

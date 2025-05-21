@@ -72,6 +72,7 @@ export const google = (calendarEvent: CalendarEvent): string => {
     trp: event.busy,
     dates: start + "/" + end,
     recur: event.rRule ? "RRULE:" + event.rRule : undefined,
+    ctz: event.timeZone,
   };
   if (event.guests && event.guests.length) {
     details.add = event.guests.join();
@@ -218,6 +219,10 @@ export const ics = (calendarEvent: CalendarEvent): string => {
     {
       key: "PRODID",
       value: "-//AnandChowdhary//calendar-link//EN"
+    },
+    {
+      key: "TZID",
+      value: event.timeZone,
     },
     {
       key: "BEGIN",
